@@ -31,7 +31,7 @@ import { QuickMessengerFloat } from './components/QuickMessengerFloat';
 
 export default function App() {
   const [config, setConfig] = useState<SchoolConfig>(getStoredConfig());
-  const [lang, setLang] = useState<Language>('ru');
+  const [lang, setLang] = useState<Language>('ka');
 
   // Lead modal state
   const [isFormOpen, setIsFormOpen] = useState(false);
