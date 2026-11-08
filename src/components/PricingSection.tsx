@@ -94,7 +94,11 @@ export const PricingSection: React.FC<PricingSectionProps> = ({ config, lang, on
                   </span>
                 </div>
                 <div className="text-xs text-slate-400 mt-1">
-                  {config.individualPriceNote}
+                  {lang === 'ka' 
+                    ? 'ღირებულება ზუსტდება გაკვეთილების ხანგრძლივობისა და სიხშირის მიხედვით' 
+                    : lang === 'en' 
+                    ? 'Price is tailored based on session length and frequency' 
+                    : config.individualPriceNote}
                 </div>
               </div>
 
