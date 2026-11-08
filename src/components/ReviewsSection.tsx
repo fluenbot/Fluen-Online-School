@@ -44,7 +44,13 @@ export const ReviewsSection: React.FC<ReviewsSectionProps> = ({ lang, onOpenForm
                 onClick={onOpenForm}
                 className="inline-flex items-center justify-center gap-2 px-6 py-3.5 text-sm font-semibold text-slate-900 bg-white hover:bg-slate-100 rounded-xl transition-all cursor-pointer shadow-sm active:scale-[0.98]"
               >
-                <span>Присоединиться к первому потоку</span>
+                <span>
+                  {lang === 'ka'
+                    ? 'პირველ ნაკადში შემოერთება'
+                    : lang === 'en'
+                    ? 'Join First Cohort'
+                    : 'Присоединиться к первому потоку'}
+                </span>
                 <ArrowRight className="w-4 h-4 text-slate-900" />
               </button>
             </div>
