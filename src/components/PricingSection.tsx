@@ -50,7 +50,7 @@ export const PricingSection: React.FC<PricingSectionProps> = ({ config, lang, on
                   </span>
                 </div>
                 <div className="text-xs text-slate-400 mt-1">
-                  ~{(config.groupPriceGel / config.groupLessonsPerMonth).toFixed(1)} {config.currency} за один урок
+                  ~{(config.groupPriceGel / config.groupLessonsPerMonth).toFixed(1)} {config.currency} {lang === 'ka' ? 'თითო გაკვეთილი' : lang === 'en' ? 'per lesson' : 'за один урок'}
                 </div>
               </div>
 
