@@ -14,10 +14,10 @@ export const Navbar: React.FC<NavbarProps> = ({ config, lang, onSelectLang, onOp
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const t = translations[lang].nav;
 
-  const languages: { code: Language; label: string; flag: string }[] = [
-    { code: 'ru', label: 'RU', flag: '🇷🇺' },
-    { code: 'en', label: 'EN', flag: '🇬🇧' },
-    { code: 'ka', label: 'KA', flag: '🇬🇪' },
+  const languages: { code: Language; label: string }[] = [
+    { code: 'ru', label: 'RU' },
+    { code: 'en', label: 'EN' },
+    { code: 'ka', label: 'KA' },
   ];
 
   const handleNavClick = (href: string) => {
@@ -89,21 +89,20 @@ export const Navbar: React.FC<NavbarProps> = ({ config, lang, onSelectLang, onOp
 
           {/* Zone 3: 1 primary CTA + language switch */}
           <div className="flex items-center gap-3 shrink-0">
-            {/* Clean Segmented Language Control with Flags */}
-            <div className="flex items-center bg-slate-100/90 p-1 rounded-xl border border-slate-200/80 text-xs font-semibold shadow-2xs">
+            {/* Clean Segmented Language Control */}
+            <div className="flex items-center bg-slate-100/80 p-0.5 rounded-lg border border-slate-200/60 text-xs font-semibold">
               {languages.map((item) => (
                 <button
                   key={item.code}
                   onClick={() => onSelectLang(item.code)}
-                  className={`inline-flex items-center gap-1.5 px-2.5 py-1 rounded-lg transition-all duration-150 cursor-pointer ${
+                  className={`px-2 py-1 rounded-md transition-all cursor-pointer ${
                     lang === item.code
-                      ? 'bg-white text-slate-900 shadow-xs font-bold scale-[1.02]'
-                      : 'text-slate-500 hover:text-slate-900 hover:bg-slate-200/50'
+                      ? 'bg-white text-slate-900 shadow-xs font-bold'
+                      : 'text-slate-500 hover:text-slate-800'
                   }`}
                   aria-label={`Switch language to ${item.label}`}
                 >
-                  <span className="text-sm leading-none" aria-hidden="true">{item.flag}</span>
-                  <span className="text-[11px] font-bold tracking-wide">{item.label}</span>
+                  {item.label}
                 </button>
               ))}
             </div>
