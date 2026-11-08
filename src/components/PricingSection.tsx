@@ -28,7 +28,7 @@ export const PricingSection: React.FC<PricingSectionProps> = ({ config, lang, on
           {/* Plan 1: Mini-Group */}
           <div className="flex flex-col justify-between p-8 sm:p-9 rounded-2xl bg-white border-2 border-sky-600/30 shadow-md shadow-sky-600/5 relative">
             <div className="absolute -top-3.5 left-8 px-3 py-0.5 bg-sky-600 text-white text-xs font-semibold rounded-md shadow-xs">
-              Стартовый набор
+              {lang === 'ka' ? 'სასტარტო მიღება' : lang === 'en' ? 'Early Intake' : 'Стартовый набор'}
             </div>
 
             <div>
