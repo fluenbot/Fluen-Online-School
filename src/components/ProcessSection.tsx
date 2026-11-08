@@ -41,7 +41,7 @@ export const ProcessSection: React.FC<ProcessSectionProps> = ({ lang }) => {
               </div>
 
               <div className="mt-6 pt-4 border-t border-slate-100 flex items-center justify-between text-xs text-slate-400 font-medium">
-                <span>Шаг {idx + 1} из 4</span>
+                <span>{lang === 'ka' ? `ნაბიჯი ${idx + 1} / 4` : lang === 'en' ? `Step ${idx + 1} of 4` : `Шаг ${idx + 1} из 4`}</span>
                 <span className="w-1.5 h-1.5 rounded-full bg-slate-300 group-hover:bg-sky-500 transition-colors"></span>
               </div>
             </div>
