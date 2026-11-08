@@ -14,10 +14,10 @@ export const Navbar: React.FC<NavbarProps> = ({ config, lang, onSelectLang, onOp
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const t = translations[lang].nav;
 
-  const languages: { code: Language; label: string }[] = [
-    { code: 'ru', label: 'RU' },
-    { code: 'en', label: 'EN' },
-    { code: 'ka', label: 'KA' },
+  const languages: { code: Language; label: string; flag: string }[] = [
+    { code: 'ru', label: 'RU', flag: '🇷🇺' },
+    { code: 'en', label: 'EN', flag: '🇬🇧' },
+    { code: 'ka', label: 'KA', flag: '🇬🇪' },
   ];
 
   const handleNavClick = (href: string) => {
