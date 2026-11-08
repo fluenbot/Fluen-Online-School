@@ -37,12 +37,12 @@ export const Hero: React.FC<HeroProps> = ({ config, lang, onOpenForm }) => {
 
             {/* Main Headline */}
             <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-[3.25rem] font-extrabold text-slate-900 tracking-tight leading-[1.12] text-balance mb-6">
-              {config.headline || t.headline}
+              {t.headline}
             </h1>
 
             {/* Subtitle */}
             <p className="text-base sm:text-lg text-slate-600 leading-relaxed max-w-2xl mb-8">
-              {config.subtitle || t.subtitle}
+              {t.subtitle}
             </p>
 
             {/* Primary & Secondary Action CTAs */}
