@@ -39,12 +39,16 @@ export const TeacherSection: React.FC<TeacherSectionProps> = ({ config, lang, on
               {/* Quiet caption underneath */}
               <div className="p-4 bg-white border-t border-slate-100 flex items-center justify-between">
                 <div>
-                  <h4 className="text-sm font-bold text-slate-900">{config.teacher.name}</h4>
-                  <p className="text-xs text-slate-500">Преподаватель английского языка</p>
+                  <h4 className="text-sm font-bold text-slate-900">
+                    {lang === 'ka' ? 'Fluen-ის პედაგოგი' : lang === 'en' ? 'Fluen Tutor' : config.teacher.name}
+                  </h4>
+                  <p className="text-xs text-slate-500">
+                    {lang === 'ka' ? 'ინგლისური ენის მასწავლებელი' : lang === 'en' ? 'English Language Instructor' : 'Преподаватель английского языка'}
+                  </p>
                 </div>
                 <div className="flex items-center gap-1.5 text-xs font-semibold text-emerald-700 bg-emerald-50 px-2.5 py-1 rounded-md border border-emerald-200/60">
                   <Award className="w-3.5 h-3.5" />
-                  <span>Верифицировано</span>
+                  <span>{lang === 'ka' ? 'ვერიფიცირებული' : lang === 'en' ? 'Verified' : 'Верифицировано'}</span>
                 </div>
               </div>
             </div>
