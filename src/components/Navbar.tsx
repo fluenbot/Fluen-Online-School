@@ -15,9 +15,9 @@ export const Navbar: React.FC<NavbarProps> = ({ config, lang, onSelectLang, onOp
   const t = translations[lang].nav;
 
   const languages: { code: Language; label: string }[] = [
-    { code: 'ru', label: 'RU' },
     { code: 'en', label: 'EN' },
     { code: 'ka', label: 'KA' },
+    { code: 'ru', label: 'RU' },
   ];
 
   const handleNavClick = (href: string) => {
