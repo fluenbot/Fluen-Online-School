@@ -62,7 +62,7 @@ export const TeacherSection: React.FC<TeacherSectionProps> = ({ config, lang, on
 
             <div className="text-base text-slate-600 leading-relaxed space-y-4 mb-8">
               <p>
-                {config.teacher.bio || t.bio}
+                {t.bio}
               </p>
             </div>
 
@@ -71,24 +71,24 @@ export const TeacherSection: React.FC<TeacherSectionProps> = ({ config, lang, on
               <div className="flex items-start gap-3">
                 <BookOpen className="w-4 h-4 text-sky-600 shrink-0 mt-0.5" />
                 <div className="text-xs">
-                  <div className="font-bold text-slate-900">Образование</div>
-                  <div className="text-slate-500 mt-0.5">{config.teacher.education}</div>
+                  <div className="font-bold text-slate-900">{lang === 'ka' ? 'განათლება' : lang === 'en' ? 'Education' : 'Образование'}</div>
+                  <div className="text-slate-500 mt-0.5">{t.educationBadge}</div>
                 </div>
               </div>
 
               <div className="flex items-start gap-3">
                 <Award className="w-4 h-4 text-sky-600 shrink-0 mt-0.5" />
                 <div className="text-xs">
-                  <div className="font-bold text-slate-900">Уровень языка</div>
-                  <div className="text-slate-500 mt-0.5">{config.teacher.level}</div>
+                  <div className="font-bold text-slate-900">{lang === 'ka' ? 'ენის დონე' : lang === 'en' ? 'Proficiency' : 'Уровень языка'}</div>
+                  <div className="text-slate-500 mt-0.5">{t.levelBadge}</div>
                 </div>
               </div>
 
               <div className="flex items-start gap-3">
                 <Compass className="w-4 h-4 text-sky-600 shrink-0 mt-0.5" />
                 <div className="text-xs">
-                  <div className="font-bold text-slate-900">Методология</div>
-                  <div className="text-slate-500 mt-0.5">{config.teacher.approach}</div>
+                  <div className="font-bold text-slate-900">{lang === 'ka' ? 'მეთოდიკა' : lang === 'en' ? 'Method' : 'Методология'}</div>
+                  <div className="text-slate-500 mt-0.5">{t.approachBadge}</div>
                 </div>
               </div>
             </div>
