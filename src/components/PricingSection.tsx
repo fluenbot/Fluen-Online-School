@@ -36,7 +36,11 @@ export const PricingSection: React.FC<PricingSectionProps> = ({ config, lang, on
                 {t.group.title}
               </h3>
               <p className="text-xs text-slate-500 mb-6">
-                Для тех, кто ценит разговорную практику и командную атмосферу
+                {lang === 'ka'
+                  ? 'მათთვის, ვისაც სურს სასაუბრო პრაქტიკა და მეგობრული გუნდური გარემო'
+                  : lang === 'en'
+                  ? 'For those who value active speaking practice and group dynamics'
+                  : 'Для тех, кто ценит разговорную практику и командную атмосферу'}
               </p>
 
               {/* Price display with tabular figures */}
@@ -46,7 +50,7 @@ export const PricingSection: React.FC<PricingSectionProps> = ({ config, lang, on
                     {config.groupPriceGel} {config.currency}
                   </span>
                   <span className="text-xs text-slate-500 font-medium">
-                    / {config.groupLessonsPerMonth} уроков в месяц
+                    / {config.groupLessonsPerMonth} {lang === 'ka' ? 'გაკვეთილი თვეში' : lang === 'en' ? 'lessons per month' : 'уроков в месяц'}
                   </span>
                 </div>
                 <div className="text-xs text-slate-400 mt-1">
@@ -76,11 +80,15 @@ export const PricingSection: React.FC<PricingSectionProps> = ({ config, lang, on
           {/* Plan 2: Individual */}
           <div className="flex flex-col justify-between p-8 sm:p-9 rounded-2xl bg-white border border-slate-200/90 shadow-xs hover:border-slate-300 transition-colors">
             <div>
-              <h3 className="text-xl font-bold text-slate-900 mb-2">
+             <h3 className="text-xl font-bold text-slate-900 mb-2">
                 {t.individual.title}
               </h3>
               <p className="text-xs text-slate-500 mb-6">
-                Максимальный фокус на персональных целях и гибком расписании
+                {lang === 'ka'
+                  ? 'მაქსიმალური ფოკუსი პერსონალურ მიზნებსა და მოქნილ გრაფიკზე'
+                  : lang === 'en'
+                  ? 'Full focus on your personal goals and flexible schedule'
+                  : 'Максимальный фокус на персональных целях и гибком расписании'}
               </p>
 
               {/* Price display */}
