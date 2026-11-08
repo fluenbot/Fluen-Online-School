@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Award, BookOpen, Compass, ArrowRight, UserCheck } from 'lucide-react';
 import { Language, SchoolConfig } from '../types';
 import { translations } from '../i18n/translations';
+import teacherPhoto from '../assets/images/teacher..jpeg';
 
 interface TeacherSectionProps {
   config: SchoolConfig;
@@ -22,8 +23,8 @@ export const TeacherSection: React.FC<TeacherSectionProps> = ({ config, lang, on
             <div className="relative rounded-2xl overflow-hidden border border-slate-200/80 bg-slate-50 shadow-lg shadow-slate-900/5 max-w-md mx-auto">
               {!photoError ? (
                 <img
-                  src={config.teacher.photoUrl || '/src/assets/images/teacher_profile_photo_1792854182867.jpg'}
-                  alt={config.teacher.name}
+                  src={teacherPhoto}
+                  alt="Fluen Teacher"
                   className="w-full h-auto aspect-4/3 sm:aspect-1/1 object-cover"
                   referrerPolicy="no-referrer"
                   onError={() => setPhotoError(true)}
