@@ -45,7 +45,11 @@ export const Footer: React.FC<FooterProps> = ({
               {t.desc}
             </p>
             <p className="text-xs text-sky-400 font-medium">
-              {config.slogan}
+              {lang === 'ka'
+                ? 'Fluen — ისწავლე ენა. შეიყვარე პროცესი.'
+                : lang === 'en'
+                ? 'Fluen — Learn the language. Love the process.'
+                : config.slogan}
             </p>
           </div>
 
