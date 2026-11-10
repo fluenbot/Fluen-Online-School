@@ -34,12 +34,12 @@ export const Footer: React.FC<FooterProps> = ({
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10 pb-12 border-b border-slate-800/80">
           {/* Brand info */}
           <div className="lg:col-span-2">
-            <a href="#" className="flex items-center gap-2 group mb-4 inline-flex">
-              <div className="w-8 h-8 rounded-lg bg-white text-slate-900 flex items-center justify-center font-bold text-lg">
-                F
-              </div>
-              <span className="text-xl font-extrabold tracking-tight text-white">Fluen</span>
-              <span className="w-1.5 h-1.5 rounded-full bg-sky-400 mb-2"></span>
+            <a href="#" className="flex items-center group mb-4 inline-flex">
+              <img
+                src="/assets/aistudio/fluen_logo-Photoroom_3c0adfd7.png"
+                alt="Fluen"
+                className="h-9 w-auto object-contain brightness-0 invert opacity-95 hover:opacity-100 transition-opacity"
+              />
             </a>
             <p className="text-sm text-slate-400 leading-relaxed max-w-sm mb-4">
               {t.desc}
