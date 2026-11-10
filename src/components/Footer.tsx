@@ -2,6 +2,7 @@ import React from 'react';
 import { Send, MessageCircle, Mail, Settings } from 'lucide-react';
 import { Language, SchoolConfig } from '../types';
 import { translations } from '../i18n/translations';
+import logoImg from '../../logo.png';
 
 interface FooterProps {
   config: SchoolConfig;
@@ -36,9 +37,9 @@ export const Footer: React.FC<FooterProps> = ({
           <div className="lg:col-span-2">
             <a href="#" className="flex items-center group mb-4 inline-flex">
               <img
-                src="/logo.png"
+                src={logoImg}
                 alt="Fluen"
-                className="h-9 w-auto object-contain brightness-0 invert opacity-95 hover:opacity-100 transition-opacity"
+                className="h-9 w-auto object-contain brightness-0 invert"
               />
             </a>
             <p className="text-sm text-slate-400 leading-relaxed max-w-sm mb-4">
