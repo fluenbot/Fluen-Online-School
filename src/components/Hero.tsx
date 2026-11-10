@@ -76,25 +76,11 @@ export const Hero: React.FC<HeroProps> = ({ config, lang, onOpenForm }) => {
           {/* Right Column: Visual Anchor */}
           <div className="lg:col-span-5 relative">
             <div className="relative rounded-2xl overflow-hidden border border-slate-200 bg-white shadow-xl shadow-slate-900/5">
-              {!imageError ? (
-                <img
-                  src="/src/assets/images/hero_teacher_online_1792854181287.jpg"
-                  alt="Fluen teacher conducting an online lesson"
-                  className="w-full h-auto aspect-16/10 sm:aspect-4/3 object-cover"
-                  referrerPolicy="no-referrer"
-                  onError={() => setImageError(true)}
-                />
-              ) : (
-                <div className="w-full aspect-4/3 bg-gradient-to-br from-slate-900 via-slate-800 to-indigo-950 flex flex-col items-center justify-center p-8 text-center text-white">
-                  <div className="w-14 h-14 rounded-2xl bg-sky-500/20 border border-sky-400/30 flex items-center justify-center mb-4">
-                    <Sparkles className="w-7 h-7 text-sky-300" />
-                  </div>
-                  <h3 className="text-lg font-bold">Fluen Online Campus</h3>
-                  <p className="text-xs text-slate-300 mt-2 max-w-xs">
-                    Комфортные интерактивные занятия английским один на один и в мини-группах
-                  </p>
-                </div>
-              )}
+              <img
+                src="/hero.jpg"
+                alt="Fluen Online English"
+                className="w-full h-auto aspect-16/10 sm:aspect-4/3 object-cover"
+              />
 
               {/* Measured Scrim & Subtle Overlaid Interactive Detail */}
               <div className="p-4 sm:p-5 bg-white border-t border-slate-100 flex items-center justify-between gap-4">
