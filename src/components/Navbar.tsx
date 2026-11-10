@@ -42,7 +42,7 @@ export const Navbar: React.FC<NavbarProps> = ({ config, lang, onSelectLang, onOp
             <img
               src={logoImg}
               alt="Fluen"
-              className="h-10 sm:h-11 w-auto object-contain"
+              className="h-14 sm:h-16 w-auto object-contain"
             />
           </a>
 
