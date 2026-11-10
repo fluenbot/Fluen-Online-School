@@ -36,7 +36,7 @@ export const Footer: React.FC<FooterProps> = ({
           <div className="lg:col-span-2">
             <a href="#" className="flex items-center group mb-4 inline-flex">
               <img
-                src="/assets/aistudio/fluen_logo-Photoroom_3c0adfd7.png"
+                src="/logo.png"
                 alt="Fluen"
                 className="h-9 w-auto object-contain brightness-0 invert opacity-95 hover:opacity-100 transition-opacity"
               />
