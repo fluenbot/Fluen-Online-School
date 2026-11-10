@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { ArrowRight, Compass, CheckCircle2, MessageSquare, Sparkles } from 'lucide-react';
 import { Language, SchoolConfig } from '../types';
 import { translations } from '../i18n/translations';
+import heroImg from '../../hero.jpg';
 
 interface HeroProps {
   config: SchoolConfig;
@@ -77,7 +78,7 @@ export const Hero: React.FC<HeroProps> = ({ config, lang, onOpenForm }) => {
           <div className="lg:col-span-5 relative">
             <div className="relative rounded-2xl overflow-hidden border border-slate-200 bg-white shadow-xl shadow-slate-900/5">
               <img
-                src="/hero.jpg"
+                src={heroImg}
                 alt="Fluen Online English"
                 className="w-full h-auto aspect-16/10 sm:aspect-4/3 object-cover"
               />
