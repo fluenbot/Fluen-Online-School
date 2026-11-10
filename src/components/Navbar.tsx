@@ -33,18 +33,16 @@ export const Navbar: React.FC<NavbarProps> = ({ config, lang, onSelectLang, onOp
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Top Bar Contract: Zone 1 (Brand) - Zone 2 (Nav links) - Zone 3 (Action) */}
         <div className="flex items-center justify-between gap-8 h-18">
-          {/* Zone 1: Brand wordmark */}
+          {/* Zone 1: Brand Logo */}
           <a
             href="#"
-            className="flex items-center gap-2 group whitespace-nowrap shrink-0 text-slate-900 focus-visible:ring-2 focus-visible:ring-sky-500 rounded-md p-1"
+            className="flex items-center group whitespace-nowrap shrink-0 focus-visible:ring-2 focus-visible:ring-sky-500 rounded-md py-1"
           >
-            <div className="w-8 h-8 rounded-lg bg-slate-900 text-sky-400 flex items-center justify-center font-bold text-lg shadow-sm group-hover:bg-slate-800 transition-colors">
-              F
-            </div>
-            <span className="text-xl font-extrabold tracking-tight text-slate-900 group-hover:text-slate-800 transition-colors">
-              Fluen
-            </span>
-            <span className="w-1.5 h-1.5 rounded-full bg-sky-500 mb-2"></span>
+            <img
+              src="/assets/aistudio/fluen_logo-Photoroom_3c0adfd7.png"
+              alt="Fluen Language School"
+              className="h-10 sm:h-11 w-auto object-contain hover:opacity-90 transition-opacity"
+            />
           </a>
 
           {/* Zone 2: 4-5 concise single-line nav links */}
