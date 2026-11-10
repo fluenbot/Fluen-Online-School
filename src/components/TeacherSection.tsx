@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Award, BookOpen, Compass, ArrowRight, UserCheck } from 'lucide-react';
 import { Language, SchoolConfig } from '../types';
 import { translations } from '../i18n/translations';
-import teacherPhoto from '../assets/images/teacher..jpeg';
+import teacherPhoto from '../assets/images/teacher..jpg';
 
 interface TeacherSectionProps {
   config: SchoolConfig;
