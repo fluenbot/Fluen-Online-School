@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState } from 'react'; 
 import { Menu, X, Globe, Sparkles } from 'lucide-react';
 import { Language, SchoolConfig } from '../types';
 import { translations } from '../i18n/translations';
