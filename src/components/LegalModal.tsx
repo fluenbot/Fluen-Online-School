@@ -104,7 +104,7 @@ export const LegalModal: React.FC<LegalModalProps> = ({ isOpen, type, onClose, l
       p3_text: {
         ru: 'Согласие действует до момента достижения целей обработки или до отзыва пользователем путем обращения на fluen.info@gmail.com.',
         en: 'Consent remains valid until processing purposes are achieved or revoked by the user via email to fluen.info@gmail.com.',
-        ka: 'თანхმობა მოქმედებს დამუშავების მიზნების მიღწევამდე ან მომხმარებლის მიერ fluen.info@gmail.com-ზე მოთხოვნის გაგზავნამდე.',
+        ka: 'თანხმობა მოქმედებს დამუშავების მიზნების მიღწევამდე ან მომხმარებლის მიერ fluen.info@gmail.com-ზე მოთხოვნის გაგზავნამდე.',
       },
     },
     closeButton: {
