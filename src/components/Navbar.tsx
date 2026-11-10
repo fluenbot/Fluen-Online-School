@@ -39,7 +39,7 @@ export const Navbar: React.FC<NavbarProps> = ({ config, lang, onSelectLang, onOp
             className="flex items-center group whitespace-nowrap shrink-0 focus-visible:ring-2 focus-visible:ring-sky-500 rounded-md py-1"
           >
             <img
-              src="/assets/aistudio/fluen_logo-Photoroom_3c0adfd7.png"
+              src="/logo.png"
               alt="Fluen Language School"
               className="h-10 sm:h-11 w-auto object-contain hover:opacity-90 transition-opacity"
             />
