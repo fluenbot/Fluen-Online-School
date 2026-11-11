@@ -144,12 +144,8 @@ export const LeadFormModal: React.FC<LeadFormModalProps> = ({
       .catch((err) => {
         console.error('Telegram error:', err);
         setIsSubmitting(false);
-        setIsSuccess(true); // Всё равно покажем успех пользователю, чтобы не пугать
+        setIsSuccess(true);
       });
-      console.error('Error saving lead', err);
-      setIsSubmitting(false);
-      setErrorMsg('Произошла ошибка при сохранении заявки. Попробуйте еще раз или напишите нам напрямую в мессенджер.');
-    }
   };
 
   // Generate Telegram direct link with pre-filled message text
