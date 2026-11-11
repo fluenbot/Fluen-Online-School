@@ -167,15 +167,7 @@ export const Footer: React.FC<FooterProps> = ({
               {t.terms}
             </button>
             <span>·</span>
-            {/* Discreet Admin Link */}
-            <button
-              onClick={onOpenAdmin}
-              className="inline-flex items-center gap-1 text-slate-500 hover:text-sky-400 transition-colors cursor-pointer"
-              title="Панель владельца школы"
-            >
-              <Settings className="w-3 h-3" />
-              <span>{t.adminAccess}</span>
-            </button>
+            
           </div>
         </div>
       </div>
