@@ -33,12 +33,88 @@ export const AdminPanelModal: React.FC<AdminPanelModalProps> = ({
   config,
   onSaveConfig,
 }) => {
+  const [isAuthenticated, setIsAuthenticated] = useState(false);
+  const [pinInput, setPinInput] = useState('');
+  const [pinError, setPinError] = useState(false);
+
   const [activeTab, setActiveTab] = useState<'leads' | 'settings'>('leads');
   const [formConfig, setFormConfig] = useState<SchoolConfig>(config);
   const [leads, setLeads] = useState<LeadSubmission[]>(getStoredLeads());
   const [saveNotice, setSaveNotice] = useState(false);
 
+  // Твой секретный пин-код (можешь поменять 1234 на свой)
+  const ADMIN_PIN = '1234';
+
   if (!isOpen) return null;
+
+  const handlePinSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    if (pinInput === ADMIN_PIN) {
+      setIsAuthenticated(true);
+      setPinError(false);
+    } else {
+      setPinError(true);
+    }
+  };
+
+  const handleClose = () => {
+    setIsAuthenticated(false);
+    setPinInput('');
+    setPinError(false);
+    onClose();
+  };
+
+  // Если пин-код еще не введен — показываем окно ввода PIN
+  if (!isAuthenticated) {
+    return (
+      <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-950/80 backdrop-blur-md animate-in fade-in">
+        <div className="w-full max-w-sm bg-white rounded-3xl p-6 sm:p-8 text-center shadow-2xl border border-slate-200">
+          <div className="w-12 h-12 rounded-2xl bg-slate-900 text-sky-400 flex items-center justify-center mx-auto mb-4 font-bold text-xl">
+            🔒
+          </div>
+          <h3 className="text-lg font-bold text-slate-900 mb-1">Доступ администратора</h3>
+          <p className="text-xs text-slate-500 mb-6">Введите секретный PIN-код для входа</p>
+
+          <form onSubmit={handlePinSubmit} className="space-y-4">
+            <input
+              type="password"
+              maxLength={8}
+              autoFocus
+              value={pinInput}
+              onChange={(e) => {
+                setPinInput(e.target.value);
+                setPinError(false);
+              }}
+              placeholder="••••"
+              className="w-full text-center text-2xl font-mono tracking-widest px-4 py-3 bg-slate-50 border border-slate-300 rounded-xl focus:border-sky-500 focus:ring-2 focus:ring-sky-500/20 text-slate-900"
+            />
+
+            {pinError && (
+              <p className="text-xs font-semibold text-rose-600 animate-shake">
+                Неверный PIN-код. Попробуйте еще раз.
+              </p>
+            )}
+
+            <div className="flex gap-2 pt-2">
+              <button
+                type="button"
+                onClick={handleClose}
+                className="flex-1 py-3 text-xs font-semibold text-slate-600 bg-slate-100 hover:bg-slate-200 rounded-xl transition-colors cursor-pointer"
+              >
+                Отмена
+              </button>
+              <button
+                type="submit"
+                className="flex-1 py-3 text-xs font-semibold text-white bg-slate-900 hover:bg-slate-800 rounded-xl transition-colors cursor-pointer"
+              >
+                Войти
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+    );
+  }
 
   const handleRefreshLeads = () => {
     setLeads(getStoredLeads());
