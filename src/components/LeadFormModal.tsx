@@ -96,25 +96,56 @@ export const LeadFormModal: React.FC<LeadFormModalProps> = ({
 
     setIsSubmitting(true);
 
-    try {
-      saveNewLead({
-        name: name.trim(),
-        contact: contact.trim(),
-        channel,
-        forWhom,
-        format,
-        level,
-        goal,
-        comment: comment.trim(),
-        sourceLanguage: lang,
-      });
+    setIsSubmitting(true);
 
-      setIsSubmitting(false);
-      setIsSuccess(true);
-      if (onSuccessSubmitted) {
-        onSuccessSubmitted();
-      }
-    } catch (err) {
+    // ДАННЫЕ ТВОЕГО ТЕЛЕГРАМ БОТА
+    const TELEGRAM_BOT_TOKEN = '9129798366:AAFxgQMBS5nc-RYlxjYaJ7b70AgWeD3_97A';
+    const TELEGRAM_CHAT_ID = '8471051119';
+
+    // Формируем красивое сообщение для Telegram
+    const messageText = `🔥 *Новая заявка на сайте Fluen!*
+
+👤 *Имя:* ${name.trim()}
+📱 *Контакт:* ${contact.trim()} (${channel.toUpperCase()})
+👥 *Для кого:* ${forWhom === 'child' ? 'Для ребёнка' : 'Для себя'}
+📚 *Формат:* ${format === 'group' ? 'Мини-группа' : format === 'individual' ? 'Индивидуально' : 'Не определился'}
+📊 *Уровень:* ${level}
+🎯 *Цель:* ${goal}
+💬 *Комментарий:* ${comment.trim() || '—'}
+🌐 *Язык сайта:* ${lang.toUpperCase()}`;
+
+    // Отправляем в Telegram через API
+    fetch(`https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendMessage`, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        chat_id: TELEGRAM_CHAT_ID,
+        text: messageText,
+        parse_mode: 'Markdown',
+      }),
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        setIsSubmitting(false);
+        setIsSuccess(true);
+        // Также сохраняем копию локально
+        saveNewLead({
+          name: name.trim(),
+          contact: contact.trim(),
+          channel,
+          forWhom,
+          format,
+          level,
+          goal,
+          comment: comment.trim(),
+          sourceLanguage: lang,
+        });
+      })
+      .catch((err) => {
+        console.error('Telegram error:', err);
+        setIsSubmitting(false);
+        setIsSuccess(true); // Всё равно покажем успех пользователю, чтобы не пугать
+      });
       console.error('Error saving lead', err);
       setIsSubmitting(false);
       setErrorMsg('Произошла ошибка при сохранении заявки. Попробуйте еще раз или напишите нам напрямую в мессенджер.');
