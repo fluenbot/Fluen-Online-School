@@ -31,7 +31,28 @@ import { QuickMessengerFloat } from './components/QuickMessengerFloat';
 
 export default function App() {
   const [config, setConfig] = useState<SchoolConfig>(getStoredConfig());
-  const [lang, setLang] = useState<Language>('ka');
+
+  // Умное автоматическое определение языка браузера посетителя
+  const [lang, setLang] = useState<Language>(() => {
+    // 1. Проверяем язык системы/браузера у пользователя
+    const userBrowserLang = (navigator.language || '').toLowerCase();
+
+    // Если грузинский (ka или ge)
+    if (userBrowserLang.startsWith('ka') || userBrowserLang.startsWith('ge')) {
+      return 'ka';
+    }
+    // Если английский (en)
+    if (userBrowserLang.startsWith('en')) {
+      return 'en';
+    }
+    // Если русский (ru, uk, be, kk)
+    if (userBrowserLang.startsWith('ru') || userBrowserLang.startsWith('uk') || userBrowserLang.startsWith('be')) {
+      return 'ru';
+    }
+
+    // Если какой-то другой — по умолчанию открываем грузинский
+    return 'ka';
+  });
 
   // Lead modal state
   const [isFormOpen, setIsFormOpen] = useState(false);
