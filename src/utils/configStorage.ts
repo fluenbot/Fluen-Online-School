@@ -11,7 +11,7 @@ export const DEFAULT_SCHOOL_CONFIG: SchoolConfig = {
   individualPriceNote: 'Стоимость уточняется в зависимости от длительности и частоты занятий',
   telegramUsername: '@x4chapuri',
   telegramUrl: 'https://t.me/x4chapuri',
-  whatsappNumber: '+995 558 13 62 04',
+  whatsappNumber: '+995 558 55 55 55',
   whatsappUrl: 'https://wa.me/995558136204',
   email: 'info@fluen.ge',
   teacher: {
