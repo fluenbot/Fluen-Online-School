@@ -11,8 +11,8 @@ export const DEFAULT_SCHOOL_CONFIG: SchoolConfig = {
   individualPriceNote: 'Стоимость уточняется в зависимости от длительности и частоты занятий',
   telegramUsername: '@x4chapuri',
   telegramUrl: 'https://t.me/x4chapuri',
-  whatsappNumber: '+995 500 000 000',
-  whatsappUrl: 'https://wa.me/995500000000',
+  whatsappNumber: '',
+  whatsappUrl: '',
   email: 'info@fluen.ge',
   teacher: {
     name: 'Преподаватель Fluen',
@@ -27,7 +27,7 @@ export const DEFAULT_SCHOOL_CONFIG: SchoolConfig = {
   currency: 'GEL',
 };
 
-const STORAGE_KEY = 'fluen_school_config_v1';
+const STORAGE_KEY = 'fluen_school_config_v2';
 
 export function getStoredConfig(): SchoolConfig {
   try {
