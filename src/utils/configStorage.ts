@@ -12,7 +12,7 @@ export const DEFAULT_SCHOOL_CONFIG: SchoolConfig = {
   telegramUsername: '@x4chapuri',
   telegramUrl: 'https://t.me/x4chapuri',
   whatsappNumber: '+995 500 000 000',
-  whatsappUrl: 'https://wa.me/995558136204',
+  whatsappUrl: 'https://wa.me/995500000000',
   email: 'info@fluen.ge',
   teacher: {
     name: 'Преподаватель Fluen',
